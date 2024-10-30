@@ -1,0 +1,35 @@
+{
+    "email": {
+        "host": "smtp.xxx.com",
+        "port": 587,
+        "username": "USERNAME",
+        "password": "PASSWORD"
+    },
+    "db": {
+        "host": "xxx.xxx.xxx.xxx",
+        "port": 5236,
+        "username": "USERNAME",
+        "password": "PASSWORD"
+    },
+    "post": [
+        {
+            "from": "xxxx@xxx.com",
+            "to": [
+                "xxxx@xxx.com"
+            ],
+            "subject": "SUBJECT",
+            "body": "CONTENT",
+            "attachment": [
+                {
+                    "table": "TEST_01",
+                    "excel": "01.xlsx"
+                },
+                {
+                    "table": "TEST_02",
+                    "excel": "02.xlsx"
+                }
+            ]
+        }
+    ],
+    "time": "00 08 * * *"
+}
