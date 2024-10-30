@@ -1,0 +1,2 @@
+# DMDataPushMailer
+一个用于达梦数据库数据的定时邮件推送器
