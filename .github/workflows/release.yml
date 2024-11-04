@@ -1,28 +1,33 @@
-name: Release
+name: Release Go Project
 
 on:
   push:
     tags:
-      - "v*.*.*"      # 只在 tag 推送时触发，例如 v1.0.0
+      - 'v*.*.*'
+
+permissions:
+  contents: write
 
 jobs:
-  release:
+  goreleaser:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.23'  # 设置 Go 版本
-
-      - name: Install GoReleaser
-        run: |
-          go install github.com/goreleaser/goreleaser/v2@latest
-
+          go-version: '>=1.23.0'
+          cache: true
+      
       - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v5
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: goreleaser release --clean
