@@ -1,13 +1,22 @@
 # DMDataPushMailer
 ## 简介
-一个用于达梦数据库数据的定时邮件推送器
+* 一个用于达梦数据库数据的定时数据邮件推送器，可定时定向导出数据库数据并通过邮件推送至指定邮箱。
 
 ## 使用指南
+* 下载/构建
+
+    * [下载预编译版本](https://github.com/jm12138/DMDataPushMailer/releases)
+
+    * 通过源码构建
+
+        ```bash
+        $ goreleaser build --snapshot --clean
+        ```
 
 * 运行命令：
 
     ```bash
-    $ go run ./ -config config.json
+    $ DMDataPushMailer -config config.json
     ```
 
 * 配置文件介绍：
