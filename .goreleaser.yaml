@@ -51,5 +51,5 @@ release:
   github:
     owner: "jm12138"
     name: "DMDataPushMailer"
-  draft: true           # 是否草稿发布
+  draft: false           # 是否草稿发布
   prerelease: true      # 是否预发布
